@@ -1,0 +1,70 @@
+﻿@model MVC_UI.Models.ComponentProcessing
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/ULayout.cshtml";
+}
+
+<h1>Component Processing Module</h1>
+<p> Edit (PUT) </p>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RequestId" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactNumber" class="control-label"></label>
+                <input asp-for="ContactNumber" class="form-control" />
+                <span asp-validation-for="ContactNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreditCardNumber" class="control-label"></label>
+                <input asp-for="CreditCardNumber" class="form-control" />
+                <span asp-validation-for="CreditCardNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComponentType" class="control-label"></label>
+                <input asp-for="ComponentType" class="form-control" />
+                <span asp-validation-for="ComponentType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ComponentName" class="control-label"></label>
+                <input asp-for="ComponentName" class="form-control" />
+                <span asp-validation-for="ComponentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsPriorityRequest" /> @Html.DisplayNameFor(model => model.IsPriorityRequest)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderPlacedDate" class="control-label"></label>
+                <input asp-for="OrderPlacedDate" class="form-control" />
+                <span asp-validation-for="OrderPlacedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

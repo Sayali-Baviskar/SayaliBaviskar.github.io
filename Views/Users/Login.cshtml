@@ -1,0 +1,124 @@
+﻿@model MVC_UI.Models.User
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #6abadeba;
+        font-family: 'Arial';
+        background-image: url('file:///C:\Users\JITESH\OneDrive\Desktop\Final Project\MVC_UI\wwwroot\1567736.png');
+    }
+    /*.login:hover{
+        opacity:1.0;
+    }*/
+    .login {
+        opacity: 1.0;
+        width: 382px;
+        overflow: hidden;
+        margin: auto;
+        margin: 20px 0 0 350px;
+        padding: 70px;
+        background-color: lightskyblue;
+        background-blend-mode: soft-light;
+        border-radius: 5px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #277582;
+        padding: 20px;
+    }
+
+    label {
+        color: black;
+        font-size: 17px;
+    }
+
+    #Uname {
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+    }
+
+    #Pass {
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+    }
+
+    #log {
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 17px;
+        padding-left: 7px;
+        color: blue;
+    }
+
+    span {
+        color: red;
+        font-size: 17px;
+    }
+
+    a {
+        float: right;
+        background-color: grey;
+    }
+</style>
+<br />
+<br />
+<center>
+    <div class="row">
+        <div style="padding: 10px 50px 10px 50px; margin:auto;" class="col-md-4 login">
+            <form asp-action="Login">
+                <h1 style="color: black;" class="font-weight-bold">Login</h1>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label">Username</label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName"  class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input type="password" asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn btn-primary" />
+                </div>
+            </form>
+            <div style="color: black; align-content: center; padding: 2px 20px 5px 20px;" class="text-center">
+                <a style="color: black; padding: 2px; background: none;" asp-action="Create"><b>Not a User?</b></a>
+            </div>
+        </div>
+    </div>
+</center>
+
+@if (ViewBag.Mystm == "Wrong Crediatials")
+
+{
+    //<div class="alert">
+    //  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    //  Wrong Credentials.
+
+    //</div>
+    <script>
+        alert("Wrong credentials")
+    </script>
+}
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

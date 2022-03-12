@@ -1,0 +1,61 @@
+﻿@model MVC_UI.Models.Payment
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/ULayout.cshtml";
+}
+
+<h1 class="font-weight-bold">Payment Details</h1>
+
+<div>
+    <h4>Payment</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComponentProcessing)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComponentProcessing.RequestId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProcessingCharge)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProcessingCharge)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PackagingAndDeliveryCharge)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PackagingAndDeliveryCharge)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CreditCardNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreditCardNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalCharge)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TotalCharge)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PaymentStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PaymentStatus)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

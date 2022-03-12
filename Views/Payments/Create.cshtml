@@ -1,0 +1,63 @@
+﻿@model MVC_UI.Models.Payment
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/ULayout.cshtml";
+}
+
+<h1>Payment Module</h1>
+<p> Create (POST) </p>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RequestId" class="control-label"></label>
+                <select asp-for="RequestId" class="form-control" asp-items="ViewBag.RequestId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcessingCharge" class="control-label"></label>
+                <input asp-for="ProcessingCharge" class="form-control" />
+                <span asp-validation-for="ProcessingCharge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PackagingAndDeliveryCharge" class="control-label"></label>
+                <input asp-for="PackagingAndDeliveryCharge" class="form-control" />
+                <span asp-validation-for="PackagingAndDeliveryCharge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreditCardNumber" class="control-label"></label>
+                <input asp-for="CreditCardNumber" class="form-control" />
+                <span asp-validation-for="CreditCardNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalCharge" class="control-label"></label>
+                <input asp-for="TotalCharge" class="form-control" />
+                <span asp-validation-for="TotalCharge" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input type ="checkbox" style="width:5px; height:5px" form-check-input" asp-for="PaymentStatus" /> @Html.DisplayNameFor(model => model.PaymentStatus)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

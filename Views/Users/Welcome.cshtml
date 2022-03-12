@@ -1,0 +1,182 @@
+﻿
+@{
+    ViewData["Title"] = "Welcome";
+    Layout = "~/Views/Shared/ULayout.cshtml";
+}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+       
+        font-family: 'Arial';
+    }
+    .container{
+        align-content: center;
+        /*background-color: white;*/
+    }
+
+    .carousel slide{
+        align-content: center;
+    }
+
+    .jumbotron{
+        background-color: white;
+
+    }
+
+    .col-sm{
+        margin: 1rem;
+        border-radius: 2px;
+    }
+
+        .col-sm.hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+        /*
+    .btn-grad {
+        background-image: linear-gradient(to right, #000000 0%, #0f9b0f 51%, #000000 100%)
+    }*/
+        /*.btn-grad {
+        margin: 10px;
+        padding: 15px 45px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        display: block;
+    }
+
+        .btn-grad:hover {
+            background-position: right center;*/ /* change the direction of the change here */
+        /*color: #fff;
+            text-decoration: none;
+        }*/
+        .btn-grad {
+            background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 51%, #00d2ff 100%)
+        }
+
+    .btn-grad {
+        margin: 10px;
+        padding: 15px 45px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        display: block;
+    }
+
+        .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+         
+         
+</style>
+
+<body>
+
+
+    <br />
+    @*<br />*@
+
+    <center>
+        <div class="row">
+            <div style="padding: 10px 50px 10px 50px; margin:auto;" class="login">
+                <center>
+                    @*<h3 style="align-content: center; color: white;">Welcome @ViewBag.Username</h3>*@
+                    <h1><button class="btn-grad">Welcome @ViewBag.Username</button></h1>
+                    @*<h1 style="align-content: center; color: white;"><b>@ViewBag.Username</b></h1>*@
+                </center>
+            </div>
+        </div>
+    </center>
+
+    <br />
+
+    @*slider*@
+<center>
+    <div class="jumbotron shadow p-3 mb-5 bg-white rounded">
+        <div class="container">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row align-items-center">
+                            <div class="col-md py-2">
+                                <h2>Engage. Re-Engage. Repeat</h2>
+                                <p>Repair or replace the orders using the website. Place your order and support detail in it. </p>
+                                <a class="btn btn-outline-dark btn-lg" asp-controller="ComponentProcessings" asp-action="Create" role="button">Request New</a>
+                            </div>
+                            <div class="col-md py-2">
+                                <img class="d-block img-fluid" src="~/images/watch.jpg" alt="First slide">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-md py-2">
+                                <h2>There’s No Looking Back</h2>
+                                <p>Replace for all the accessories and repair for all the integral parts of the product</p>
+                               <a class="btn btn-outline-dark btn-lg" asp-controller="ComponentProcessings" asp-action="Create" role="button">Request New</a>
+                            </div>
+                            <div class="col-md py-2">
+                                <img class="d-block img-fluid" src="~/images/tablet1.jpg" alt="First slide">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-md py-2">
+                                <h2>Power At Your Fingertips</h2>
+                                <p> Fantastic features to make eCommerce shipping an easy-peasy task.</p>
+                                <a class="btn btn-outline-dark btn-lg" asp-controller="ComponentProcessings" asp-action="Create" role="button">Request New</a>
+                            </div>
+                            <div class="col-md py-2">
+                                <img class="d-block img-fluid" src="~/images/headphones.jpg" alt="First slide">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+    @*texts*@
+    <br />
+    <br />
+    <center>
+        <div><h2 class="text-center font-weight-bold p-4">Return Order Process</h2></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm shadow p-3 mb-4 bg-white rounded">
+                    <img src="https://www.brightpearl.com/wp-content/uploads/2021/11/icons8-lb-hand_box@2x.png.webp" alt="Alternate Text" />
+                    <h5 class="font-weight-bold">Register/Login</h5>
+                    <h6>Register Yourself and start using the website</h6>
+                </div>
+                <div class="col-sm shadow p-3 mb-4 bg-white rounded">
+                    <img src="https://www.brightpearl.com/wp-content/uploads/2021/11/icons8-lb-hand_box@2x.png.webp" alt="Alternate Text" />
+                    <h5 class="font-weight-bold">Quick Order Processing</h5>
+                    <h6>Create Order by adding the product details in it with a few click.</h6>
+                </div>
+                <div class="col-sm shadow p-3 mb-4 bg-white rounded">
+                    <img src="https://www.brightpearl.com/wp-content/uploads/2021/11/icons8-lb-hand_box@2x.png.webp" alt="Alternate Text" />
+                    <h5  class="font-weight-bold">Payment</h5>
+                    <h6>Make the payment for the order create</h6>
+                </div>
+            </div>
+        </div>
+
+        <br /><br />
+    </center>
+
+</body>

@@ -1,0 +1,70 @@
+﻿@model MVC_UI.Models.ComponentProcessing
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/ULayout.cshtml";
+}
+
+<h1>Component Processing Module</h1>
+<p> Delete (DELETE) </p>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ContactNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CreditCardNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreditCardNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComponentType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComponentType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComponentName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComponentName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IsPriorityRequest)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IsPriorityRequest)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderPlacedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrderPlacedDate)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="RequestId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-controller="ProcessResponses" asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,50 @@
+﻿@model MVC_UI.Models.ProcessResponse
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/ULayout.cshtml";
+}
+
+<h1>Process Response Module</h1>
+<p> Details (GET/id) </p>
+
+<div>
+    <h4>ProcessResponse</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ComponentProcessing)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ComponentProcessing.RequestId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProcessingCharge)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProcessingCharge)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PackagingAndDeliveryCharge)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PackagingAndDeliveryCharge)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateOfDelivery)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateOfDelivery)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalCharge)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TotalCharge)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

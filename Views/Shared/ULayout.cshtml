@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Return Order Management System</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body style="background-color: azure">
+    <header style="background-color: black; color: antiquewhite; margin: 0px; width: 100%; padding: 0px;">
+        <nav style="background-color: black; color: antiquewhite; margin: 0px; padding: 0px;" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+            <div style="background-color:black; color:antiquewhite; margin: 0px; padding: 10px;" class="container">
+                <a style="background-color: black; color: lawngreen;" class="navbar-brand" asp-area="" asp-controller="Users" asp-action="Welcome">&nbsp;&nbsp;&nbsp;<b>Return Order Management System</b></a>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a style="color: white;" class="nav-link font-weight-bold" asp-area="" asp-controller="ProcessResponses" asp-action="Index">View My Orders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="color: white;" class="nav-link font-weight-bold" asp-area="" asp-controller="Payments" asp-action="Index">Payment Status</a>
+                        </li>
+                    </ul>
+                    &nbsp;&nbsp;&nbsp;
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item">
+                            @*<input type="submit" value="Logout" asp-area="" asp-controller="Users" asp-action="LogOut" class="btn btn-primary nav-link font-weight-bold" />*@
+                            <a style="color: white;" class="nav-link font-weight-bold border border-white" asp-area="" asp-controller="Users" asp-action="LogOut">Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <br /><br /><br />
+    <footer style="background-color:black; color:white;" class="border-top footer">
+        <div class="container">
+            &copy; 2022 - <b>Return Order Management System </b>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

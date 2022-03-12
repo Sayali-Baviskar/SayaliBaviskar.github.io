@@ -1,0 +1,71 @@
+﻿@model IEnumerable<MVC_UI.Models.ProcessResponse>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/ULayout.cshtml";
+}
+<div class="jumbotron jumbotron-fluid bg-dark">
+    <div class="container">
+        <h1 class="display-4 text-center font-weight-bold text-white">Product Details</h1>
+        <div class="text-center pt-3">
+            <a class="btn btn-outline-light" asp-controller="ComponentProcessings" asp-action="Create">Request New</a>
+        </div>
+    </div>
+</div>
+
+<table class="table table-striped table-bordered text-center">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProcessingCharge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PackagingAndDeliveryCharge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfDelivery)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCharge)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProcessingCharge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PackagingAndDeliveryCharge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfDelivery)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalCharge)
+                </td>
+                <td>
+                   <div class="btn-group">
+                        @*<a class="btn btn-outline-success" asp-controller="Payments" asp-action="Edit" asp-route-id="@item.RequestId" role="button">Pay</a>*@
+                        <a class="btn btn-outline-primary" asp-controller="ComponentProcessings" asp-action="Details" asp-route-id="@item.RequestId">Details</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

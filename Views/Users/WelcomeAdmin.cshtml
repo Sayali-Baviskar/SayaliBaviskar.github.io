@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "WelcomeAdmin";
+    Layout = "~/Views/Shared/ALayout.cshtml";
+}
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #6abadeba;
+        background-image: url('file:///C:\Users\922508\OneDrive - Cognizant\Documents\VS Projects\PROJECT\Final\MVC_UI\wwwroot\1567736.png');
+        font-family: 'Arial';
+    }
+
+    .login:hover {
+        opacity: 1.0;
+    }
+
+    .login {
+        opacity: 0.8;
+        width: 382px;
+        overflow: hidden;
+        margin: auto;
+        margin: 20px 0 0 350px;
+        padding: 70px;
+        background-color: black;
+        background-blend-mode: soft-light;
+        border-radius: 15px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #277582;
+        padding: 20px;
+    }
+
+    label {
+        color: #08ffd1;
+        font-size: 17px;
+    }
+
+    #Uname {
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+    }
+
+    #Pass {
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+    }
+
+    #log {
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 17px;
+        padding-left: 7px;
+        color: blue;
+    }
+
+    span {
+        color: white;
+        font-size: 17px;
+    }
+
+    a {
+        float: right;
+    }
+</style>
+<br />
+<br />
+<center>
+    <div class="row">
+        <div style="padding: 10px 50px 10px 50px; margin:auto;" class="col-md-4 login">
+            <center>
+                <h3 style="align-content: center; color: antiquewhite;">Welcome</h3><h1 style="align-content: center; color: antiquewhite;"><b>@ViewBag.Username</b></h1>
+            </center>            
+        </div>
+    </div>
+</center>

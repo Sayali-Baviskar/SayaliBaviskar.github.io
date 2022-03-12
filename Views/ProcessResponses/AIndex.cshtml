@@ -1,0 +1,134 @@
+﻿@model IEnumerable<MVC_UI.Models.ProcessResponse>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/ALayout.cshtml";
+}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #6abadeba;
+       
+        font-family: 'Arial';
+    }
+
+    .login:hover {
+        opacity: 1.0;
+    }
+
+    .login {
+        opacity: 0.8;
+        width: 500px;
+        overflow: hidden;
+        margin: auto;
+        padding: 30px;
+        background-color: black;
+        background-blend-mode: soft-light;
+        border-radius: 15px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #277582;
+        padding: 10px;
+    }
+
+    label {
+        color: #08ffd1;
+        font-size: 17px;
+    }
+
+    #Uname {
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+    }
+
+    #Pass {
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        padding-left: 8px;
+    }
+
+    #log {
+        width: 300px;
+        height: 30px;
+        border: none;
+        border-radius: 17px;
+        padding-left: 7px;
+        color: blue;
+    }
+
+    span {
+        color: white;
+        font-size: 17px;
+    }
+
+    a {
+        float: right;
+    }
+</style>
+<center>
+    <div style="padding: 10px; margin:auto; width:auto;" class="row">
+        <div style="padding: 10px; margin:auto; width:fit-content;" class="col-md-4 login">
+            <center>
+                <h1 style="align-content: center; color: antiquewhite;"><b>All Orders</b></h1>
+            </center>
+        </div>
+    </div>
+</center>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProcessingCharge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PackagingAndDeliveryCharge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfDelivery)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCharge)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProcessingCharge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PackagingAndDeliveryCharge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfDelivery)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalCharge)
+                </td>
+                <td>
+                    @*<a asp-action="Payments/Edit" asp-route-id="@item.Id">Edit</a> |*@
+                    @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
+                    <a asp-controller="ComponentProcessings" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
